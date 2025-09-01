@@ -1,0 +1,6 @@
+*.egg-info/
+.DS_Store
+
+/Demo/out/
+/Demo/target/
+/Demo/venv/
