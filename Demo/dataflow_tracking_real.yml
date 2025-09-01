@@ -9,7 +9,8 @@ nodes:
 
   - id: hand_simulation
     build: pip install -e AHSimulation
-    path: AHSimulation/AHSimulation/mj_mink_right.py
+    path: venv/bin/mjpython
+    args: AHSimulation/AHSimulation/mj_mink_right.py
     inputs:
       hand_pos: hand_tracker/hand_pos
       tick: dora/timer/millis/2
@@ -20,6 +21,6 @@ nodes:
   - id: hand_controller
     build: cargo build -p AHControl
     path: target/debug/AHControl #--serialport /dev/ttyACM0 --config AHControl/config/r_hand.toml
-    args: --serialport /dev/ttyACM0 --config AHControl/config/r_hand.toml
+    args: --serialport /dev/tty.usbmodem5A7C1209691 --baudrate 1000000 --config AHControl/config/r_hand.toml
     inputs:
       mj_joints_pos: hand_simulation/mj_joints_pos

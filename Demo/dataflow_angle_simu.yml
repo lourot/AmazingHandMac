@@ -9,11 +9,11 @@ nodes:
 
   - id: hand_simulation
     build: pip install -e AHSimulation
-    path: AHSimulation/AHSimulation/mj_mink_right.py
+    path: venv/bin/mjpython
+    args: AHSimulation/AHSimulation/mj_mink_right.py -m quat
     inputs:
       hand_quat: move_angle/hand_quat
       tick: dora/timer/millis/2
       tick_ctrl: dora/timer/millis/10
     outputs:
       - mj_joints_pos
-    args: -m quat
