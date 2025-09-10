@@ -14,7 +14,7 @@ nodes:
     inputs:
       hand_pos: hand_tracker/hand_pos
       tick: dora/timer/millis/2
-      tick_ctrl: dora/timer/millis/10
+      tick_ctrl: dora/timer/millis/50
     outputs:
       - mj_joints_pos
 
